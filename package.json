@@ -1,5 +1,5 @@
 {
-  "name": "lacomanda-front",
+  "name": "front",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:lacomanda-front": "node dist/lacomanda-front/server/server.mjs"
+    "serve:ssr:front": "node dist/front/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -15,12 +15,14 @@
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
+    "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.0.0",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.5",
+    "@avivharuzi/ngx-seo": "^16.0.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
