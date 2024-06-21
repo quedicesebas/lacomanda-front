@@ -1,11 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ExperimentalPendingTasks,
-  Signal,
-  effect,
-  inject,
-} from '@angular/core';
+import { Component, Signal, effect, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Title } from '@angular/platform-browser';
 import { NgxSeo } from '@avivharuzi/ngx-seo';
@@ -23,14 +17,10 @@ export class HomeComponent {
   seo: Signal<NgxSeo | undefined>;
 
   constructor(title: Title) {
-    const pendingTasks = inject(ExperimentalPendingTasks);
-    const taskCleanup = pendingTasks.add();
     this.seo = toSignal(this.mainService.seo$);
-    // do work that should block application's stability and then:
     effect(() => {
       if (this.seo()) {
         title.setTitle(this.seo()?.title!);
-        taskCleanup();
       }
     });
   }
