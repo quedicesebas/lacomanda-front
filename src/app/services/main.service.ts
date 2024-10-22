@@ -21,14 +21,14 @@ export class MainService {
     }
 
     if (this.hostname) {
-      let brandId$ = this.getDocById<{ brandId: string }>(
-        'brandDomains',
+      let brandId$ = this.getDocById<{ storeId: string }>(
+        'storeDomains',
         this.hostname
       );
 
       this.seo$ = brandId$.pipe(
         switchMap((brandDomain) => {
-          return this.getDocById<NgxSeo>('seoConfigs', brandDomain!.brandId);
+          return this.getDocById<NgxSeo>('seoConfigs', brandDomain!.storeId);
         })
       );
     }
